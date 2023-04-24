@@ -3,6 +3,7 @@ export interface IPokemon {
   id: string;
   name: string;
   weight: number;
+  order: number;
   sprites: {
     front_default: string;
     versions: {
@@ -17,6 +18,18 @@ export interface IPokemon {
         "ultra-sun-ultra-moon": {
           front_default: string;
         }
+      }
+    }
+  }
+  types: {
+    0: {
+      type: {
+        name: string;
+      }
+    }
+    1: {
+      type: {
+        name: string;
       }
     }
   }
