@@ -1,9 +1,6 @@
 // React
 import { useEffect, useState } from "react";
 
-// Import components
-import { Navbar } from "../../components/Navbar";
-
 // Import API
 import axios from "axios";
 
@@ -12,11 +9,15 @@ import { IPokemon } from "../../types/Pokemon";
 
 // Styles
 import {
-  Container,
   Main,
+  Content,
   ContainerPokemon,
-  Button,
+  Box,
   ImgPokemon,
+  AboutPokemon,
+  Order,
+  Name,
+  Type,
 } from "./styles";
 
 export const Pokemons = () => {
@@ -25,7 +26,7 @@ export const Pokemons = () => {
   const getPokemons = async () => {
     try {
       const response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`
+        `https://pokeapi.co/api/v2/pokemon?limit=800&offset=0`
       );
       const pokemons = await Promise.all(
         response.data.results.map(async (pokemon: IPokemon) => {
@@ -38,35 +39,163 @@ export const Pokemons = () => {
       console.log(error);
     }
   };
+
   useEffect(() => {
     getPokemons();
   }, []);
 
   return (
-    <Container>
-      <Navbar />
-      <Main>
-        {listPokemon.map((pokemon: IPokemon) => (
-          <ContainerPokemon>
-            <Button>
-              {pokemon?.sprites?.versions["generation-vii"][
-                "ultra-sun-ultra-moon"
-              ].front_default === null ? (
-                <ImgPokemon src={pokemon?.sprites?.front_default} />
-              ) : (
-                <ImgPokemon
-                  src={
-                    pokemon?.sprites?.versions["generation-vii"][
-                      "ultra-sun-ultra-moon"
-                    ].front_default
-                  }
-                />
+    <Main>
+      <Content>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {pokemon?.types[0].type.name === "grass" && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
               )}
-            </Button>
-            a
-          </ContainerPokemon>
-        ))}
-      </Main>
-    </Container>
+            </>
+          ))}
+        </ContainerPokemon>
+      </Content>
+
+      {/* {pokemon?.types[0].type.name === "fire" && (
+            <ImgPokemon
+              src={
+                pokemon?.sprites?.versions["generation-vii"][
+                  "ultra-sun-ultra-moon"
+                ].front_default
+              }
+            />
+          )}
+
+          {pokemon?.types[0].type.name === "water" ||
+            (pokemon?.types[0].type.name === "ice" && (
+              <ImgPokemon
+                src={
+                  pokemon?.sprites?.versions["generation-vii"][
+                    "ultra-sun-ultra-moon"
+                  ].front_default
+                }
+              />
+            ))}
+
+          {pokemon?.types[0].type.name === "bug" && (
+            <ImgPokemon
+              src={
+                pokemon?.sprites?.versions["generation-vii"][
+                  "ultra-sun-ultra-moon"
+                ].front_default
+              }
+            />
+          )}
+
+          {pokemon?.types[0].type.name === "normal" && (
+            <ImgPokemon
+              src={
+                pokemon?.sprites?.versions["generation-vii"][
+                  "ultra-sun-ultra-moon"
+                ].front_default
+              }
+            />
+          )}
+
+          {pokemon?.types[0].type.name === "poison" && (
+            <ImgPokemon
+              src={
+                pokemon?.sprites?.versions["generation-vii"][
+                  "ultra-sun-ultra-moon"
+                ].front_default
+              }
+            />
+          )}
+
+          {pokemon?.types[0].type.name === "ghost" && (
+            <ImgPokemon
+              src={
+                pokemon?.sprites?.versions["generation-vii"][
+                  "ultra-sun-ultra-moon"
+                ].front_default
+              }
+            />
+          )}
+
+          {pokemon?.types[0].type.name === "eletric" && (
+            <ImgPokemon
+              src={
+                pokemon?.sprites?.versions["generation-vii"][
+                  "ultra-sun-ultra-moon"
+                ].front_default
+              }
+            />
+          )}
+
+          {pokemon?.types[0].type.name === "ground" && (
+            <ImgPokemon
+              src={
+                pokemon?.sprites?.versions["generation-vii"][
+                  "ultra-sun-ultra-moon"
+                ].front_default
+              }
+            />
+          )}
+
+          {pokemon?.types[0].type.name === "psychic" ||
+            (pokemon?.types[0].type.name === "fairy" && (
+              <ImgPokemon
+                src={
+                  pokemon?.sprites?.versions["generation-vii"][
+                    "ultra-sun-ultra-moon"
+                  ].front_default
+                }
+              />
+            ))}
+
+          {pokemon?.types[0].type.name === "rock" && (
+            <ImgPokemon
+              src={
+                pokemon?.sprites?.versions["generation-vii"][
+                  "ultra-sun-ultra-moon"
+                ].front_default
+              }
+            />
+          )}
+
+          {pokemon?.types[0].type.name === "fighting" && (
+            <ImgPokemon
+              src={
+                pokemon?.sprites?.versions["generation-vii"][
+                  "ultra-sun-ultra-moon"
+                ].front_default
+              }
+            />
+          )}
+
+          {pokemon?.types[0].type.name === "dragon" && (
+            <ImgPokemon
+              src={
+                pokemon?.sprites?.versions["generation-vii"][
+                  "ultra-sun-ultra-moon"
+                ].front_default
+              }
+            />
+          )} */}
+    </Main>
   );
 };
