@@ -18,6 +18,17 @@ import {
   Order,
   Name,
   Type,
+  ContentFire,
+  ContentWater,
+  ContentBug,
+  ContentNormal,
+  ContentPoison,
+  ContentEletric,
+  ContentGround,
+  ContentPsy,
+  ContentRock,
+  ContentFight,
+  ContentDragon,
 } from "./styles";
 
 export const Pokemons = () => {
@@ -75,127 +86,327 @@ export const Pokemons = () => {
         </ContainerPokemon>
       </Content>
 
-      {/* {pokemon?.types[0].type.name === "fire" && (
-            <ImgPokemon
-              src={
-                pokemon?.sprites?.versions["generation-vii"][
-                  "ultra-sun-ultra-moon"
-                ].front_default
-              }
-            />
-          )}
+      <ContentFire>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {pokemon?.types[0].type.name === "fire" && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentFire>
 
-          {pokemon?.types[0].type.name === "water" ||
-            (pokemon?.types[0].type.name === "ice" && (
-              <ImgPokemon
-                src={
-                  pokemon?.sprites?.versions["generation-vii"][
-                    "ultra-sun-ultra-moon"
-                  ].front_default
-                }
-              />
-            ))}
+      <ContentWater>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {(pokemon?.types[0].type.name === "water" ||
+                pokemon?.types[0].type.name === "ice") && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentWater>
 
-          {pokemon?.types[0].type.name === "bug" && (
-            <ImgPokemon
-              src={
-                pokemon?.sprites?.versions["generation-vii"][
-                  "ultra-sun-ultra-moon"
-                ].front_default
-              }
-            />
-          )}
+      <ContentBug>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {pokemon?.types[0].type.name === "bug" && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentBug>
 
-          {pokemon?.types[0].type.name === "normal" && (
-            <ImgPokemon
-              src={
-                pokemon?.sprites?.versions["generation-vii"][
-                  "ultra-sun-ultra-moon"
-                ].front_default
-              }
-            />
-          )}
+      <ContentNormal>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {pokemon?.types[0].type.name === "normal" && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentNormal>
 
-          {pokemon?.types[0].type.name === "poison" && (
-            <ImgPokemon
-              src={
-                pokemon?.sprites?.versions["generation-vii"][
-                  "ultra-sun-ultra-moon"
-                ].front_default
-              }
-            />
-          )}
+      <ContentPoison>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {(pokemon?.types[0].type.name === "poison" ||
+                pokemon?.types[0].type.name === "ghost") && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentPoison>
 
-          {pokemon?.types[0].type.name === "ghost" && (
-            <ImgPokemon
-              src={
-                pokemon?.sprites?.versions["generation-vii"][
-                  "ultra-sun-ultra-moon"
-                ].front_default
-              }
-            />
-          )}
+      <ContentEletric>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {pokemon?.types[0].type.name === "electric" && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentEletric>
 
-          {pokemon?.types[0].type.name === "eletric" && (
-            <ImgPokemon
-              src={
-                pokemon?.sprites?.versions["generation-vii"][
-                  "ultra-sun-ultra-moon"
-                ].front_default
-              }
-            />
-          )}
+      <ContentGround>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {pokemon?.types[0].type.name === "ground" && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentGround>
 
-          {pokemon?.types[0].type.name === "ground" && (
-            <ImgPokemon
-              src={
-                pokemon?.sprites?.versions["generation-vii"][
-                  "ultra-sun-ultra-moon"
-                ].front_default
-              }
-            />
-          )}
+      <ContentPsy>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {(pokemon?.types[0].type.name === "psychic" ||
+                pokemon?.types[0].type.name === "fairy") && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentPsy>
 
-          {pokemon?.types[0].type.name === "psychic" ||
-            (pokemon?.types[0].type.name === "fairy" && (
-              <ImgPokemon
-                src={
-                  pokemon?.sprites?.versions["generation-vii"][
-                    "ultra-sun-ultra-moon"
-                  ].front_default
-                }
-              />
-            ))}
+      <ContentRock>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {pokemon?.types[0].type.name === "rock" && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentRock>
 
-          {pokemon?.types[0].type.name === "rock" && (
-            <ImgPokemon
-              src={
-                pokemon?.sprites?.versions["generation-vii"][
-                  "ultra-sun-ultra-moon"
-                ].front_default
-              }
-            />
-          )}
+      <ContentFight>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {pokemon?.types[0].type.name === "fighting" && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentFight>
 
-          {pokemon?.types[0].type.name === "fighting" && (
-            <ImgPokemon
-              src={
-                pokemon?.sprites?.versions["generation-vii"][
-                  "ultra-sun-ultra-moon"
-                ].front_default
-              }
-            />
-          )}
-
-          {pokemon?.types[0].type.name === "dragon" && (
-            <ImgPokemon
-              src={
-                pokemon?.sprites?.versions["generation-vii"][
-                  "ultra-sun-ultra-moon"
-                ].front_default
-              }
-            />
-          )} */}
+      <ContentDragon>
+        <ContainerPokemon>
+          {listPokemon.map((pokemon: IPokemon) => (
+            <>
+              {pokemon?.types[0].type.name === "dragon" && (
+                <Box>
+                  <ImgPokemon
+                    src={
+                      pokemon?.sprites?.versions["generation-vii"][
+                        "ultra-sun-ultra-moon"
+                      ].front_default
+                    }
+                  />
+                  <AboutPokemon>
+                    <Order>{`#${pokemon.order}`}</Order>
+                    <Name>{pokemon.name}</Name>
+                    {pokemon.types[1] ? (
+                      <Type>{`Type: ${pokemon.types[0].type.name} / ${pokemon.types[1].type.name}`}</Type>
+                    ) : (
+                      <Type>{`Type: ${pokemon.types[0].type.name}`}</Type>
+                    )}
+                  </AboutPokemon>
+                </Box>
+              )}
+            </>
+          ))}
+        </ContainerPokemon>
+      </ContentDragon>
     </Main>
   );
 };
