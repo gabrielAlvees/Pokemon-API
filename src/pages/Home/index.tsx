@@ -1,9 +1,6 @@
 // React icons
 import { BsArrowRight, BsArrowLeft, BsArrowUpRight } from "react-icons/bs";
 
-// Import components
-import { Navbar } from "../../components/Navbar";
-
 // Import Images
 import Charizard from "../../assets/charizardHome.png";
 import background from "../../assets/background3.jpg";
@@ -36,7 +33,6 @@ import {
 export const Home = () => {
   return (
     <Container>
-      <Navbar />
       <Main>
         <BlockText>
           <Title>Pokémon Cards</Title>

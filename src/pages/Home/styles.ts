@@ -4,14 +4,16 @@ export const Container = styled.div`
   background-color: #212121;
   height: 100vh;
   padding: 0px 70px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const Main = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 100px;
+  justify-content: space-between;
+  width: 100%;
 `;
 
 export const BlockText = styled.div``;
@@ -21,7 +23,7 @@ export const ContentPokemon = styled.div`
 `;
 
 export const ImagePokemon = styled.img`
-  height: 490px;
+  height: 470px;
   width: 500px;
   position: absolute;
   z-index: 10;
@@ -35,8 +37,7 @@ export const ImageBackground = styled.img`
   border-radius: 0 20% 0 0;
 `;
 
-export const BoxAbout = styled.div`
-`;
+export const BoxAbout = styled.div``;
 
 export const Title = styled.p`
   font-size: 1rem;
