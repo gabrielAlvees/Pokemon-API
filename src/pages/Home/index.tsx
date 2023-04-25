@@ -1,3 +1,6 @@
+// React
+import { Navigate, useNavigate } from "react-router-dom";
+
 // React icons
 import { BsArrowRight, BsArrowLeft, BsArrowUpRight } from "react-icons/bs";
 
@@ -31,14 +34,15 @@ import {
 } from "./styles";
 
 export const Home = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Main>
         <BlockText>
-          <Title>Pokémon Cards</Title>
+          <Title>Pokémon</Title>
           <Text>Catch em! Collect your Strongest and Rarest Pokémon</Text>
           <SubText>Catch all of the Pokemon Cards Officially Licensed</SubText>
-          <ButtonGet>
+          <ButtonGet onClick={() => navigate("/pokemons")}>
             Get Started <BsArrowUpRight />
           </ButtonGet>
         </BlockText>
